@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070a12">
+<title>DRAG AIM PRO X — V8.0 ULTRA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#070a12;--panel:#0d1421;--panel2:#111c2b;--line:#223249;--text:#eff6ff;--muted:#8090a8;--cyan:#43dcff;--blue:#5587ff;--pink:#ff4f86;--green:#48e1b1;--shadow:0 18px 55px #0005}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}
+body:before,body:after{content:"";position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(90px);opacity:.2;animation:float 13s ease-in-out infinite alternate}
+body:before{width:420px;height:420px;background:#126caa;top:-190px;right:-90px}body:after{width:360px;height:360px;background:#9d2866;bottom:-210px;left:-140px;animation-delay:-5s}
+@keyframes float{to{transform:translate(45px,55px) scale(1.12)}}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes pulse{50%{box-shadow:0 0 24px #43dcff55}}
+.login-wrap{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:20px;background:#050810e8;backdrop-filter:blur(18px)}.login-wrap.hidden{display:none}.login-card{width:min(430px,100%);border:1px solid #2b405a;background:linear-gradient(145deg,#111e30,#0b111d);border-radius:25px;padding:30px;box-shadow:0 25px 100px #0009;animation:rise .5s ease}.login-logo,.brand-icon{display:grid;place-items:center;background:linear-gradient(140deg,#ff4f86,#8b4dff 55%,#3ccfff);font-weight:900;box-shadow:0 10px 35px #8c4dff44}.login-logo{height:62px;width:62px;border-radius:19px;font-size:31px;margin-bottom:20px}.login-card h1{font-size:23px;margin:0 0 7px}.login-card p{font-size:12px;color:var(--muted);line-height:1.7;margin:0 0 23px}.field{display:grid;gap:8px;margin:14px 0}.field label{font-size:10px;color:#a9b8cc;font-weight:800;letter-spacing:.6px}.field input,.field select,.text-input{border:1px solid #2a3b52;background:#09111d;border-radius:11px;padding:12px;color:white;outline:none;width:100%}.field input:focus,.text-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #43dcff16}.login-btn,.primary{border:0;border-radius:11px;padding:12px 15px;background:linear-gradient(100deg,var(--cyan),#6d9dff);color:#06101a;font-weight:900}.login-btn{width:100%;margin-top:10px}.login-note{font-size:10px;color:#70839c;text-align:center;margin-top:14px}
+.layout{max-width:1550px;margin:auto;min-height:100vh;display:grid;grid-template-columns:245px 1fr}.side{border-right:1px solid #1b2a3d;background:#090f19e8;backdrop-filter:blur(18px);padding:25px 16px;display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:11px;padding:0 8px}.brand-icon{width:43px;height:43px;border-radius:14px;font-size:23px}.brand strong{font-size:13px;letter-spacing:1px}.brand small{display:block;color:var(--cyan);font-size:9px;letter-spacing:2.4px;margin-top:4px;font-weight:900}.nav-label{font-size:9px;color:#596c86;letter-spacing:2px;font-weight:900;padding:0 12px 10px}.nav{display:grid;gap:5px}.nav button{border:1px solid transparent;border-radius:11px;padding:11px;color:#8c9cb2;background:transparent;text-align:left;font-size:11px;font-weight:700;display:flex;gap:12px;align-items:center}.nav button span{width:20px;text-align:center;font-size:16px}.nav button.active{color:#67e3ff;border-color:#244760;background:linear-gradient(100deg,#142f46,#122033);box-shadow:inset 3px 0 var(--cyan)}.nav button:hover{background:#142033;color:white}.side-foot{margin-top:auto;border:1px solid var(--line);background:#101a29;border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px}.avatar{width:35px;height:35px;border-radius:11px;background:linear-gradient(140deg,#285e9a,#a34382);display:grid;place-items:center;font-size:11px;font-weight:900}.side-foot b{font-size:11px}.side-foot small{display:block;color:var(--muted);font-size:9px;margin-top:4px}
+main{padding:25px 32px 35px;min-width:0}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:10px}.crumb{font-size:11px;color:var(--muted)}.crumb b{color:#e8f2ff}.top-actions{display:flex;align-items:center;gap:8px}.online{font-size:9px;color:var(--green);border:1px solid #245342;background:#10251f;border-radius:30px;padding:8px 11px;font-weight:900;letter-spacing:.7px}.small-btn{border:1px solid var(--line);background:#111c2b;color:#c9d8eb;border-radius:10px;width:36px;height:36px}
+.hero{border:1px solid #294663;border-radius:22px;padding:27px 29px;background:linear-gradient(105deg,#142b43,#111c30 60%,#24192f);position:relative;overflow:hidden;margin-bottom:18px}.hero:after{content:"✳";position:absolute;right:7%;top:50%;transform:translateY(-50%);font-size:165px;color:#65dfff0a}.eyebrow{font-size:9px;color:var(--cyan);letter-spacing:2.8px;font-weight:900}.hero h1{font-size:clamp(24px,3vw,35px);letter-spacing:-1.4px;margin:10px 0}.hero p{font-size:12px;color:#9aabc2;line-height:1.7;margin:0;max-width:650px}.hero-actions{display:flex;gap:9px;margin-top:18px;position:relative;z-index:1;flex-wrap:wrap}.primary,.secondary,.danger,.soft{padding:10px 14px;border-radius:10px;font-size:10px;font-weight:900}.secondary,.soft{border:1px solid #3a4d66;background:#172438;color:#d9e8f8}.danger{border:1px solid #71344c;background:#351724;color:#ff9db9}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.metric,.panel{border:1px solid var(--line);background:linear-gradient(145deg,#101a28,#0c131e);border-radius:16px}.metric{padding:15px}.metric-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px}.metric-icon{width:29px;height:29px;border-radius:9px;background:#153247;color:var(--cyan);display:grid;place-items:center;font-size:15px}.metric strong{display:block;font-size:24px;margin:10px 0 3px;letter-spacing:-1px}.metric small{font-size:9px;color:#657992}.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,1fr);gap:15px}.panel{padding:18px;min-width:0;margin-bottom:14px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;gap:10px}.panel-title{font-size:12px;font-weight:900;letter-spacing:.6px}.panel-sub{font-size:9px;color:var(--muted);margin-top:5px}.tag{border:1px solid #28536b;background:#102a3b;color:var(--cyan);border-radius:30px;padding:6px 9px;font-size:8px;font-weight:900;white-space:nowrap}.page{display:none;animation:rise .25s ease}.page.active{display:block}.setting{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #1c2938}.setting:last-child{border:0}.setting-info{display:flex;align-items:center;gap:10px;min-width:0}.setting-ico{height:33px;width:33px;flex:0 0 auto;border-radius:10px;background:#142a3b;color:var(--cyan);display:grid;place-items:center}.setting b{font-size:11px;display:block}.setting small{font-size:9px;color:var(--muted);display:block;margin-top:4px;line-height:1.45}.toggle{height:24px;width:43px;border:1px solid #36465b;background:#263448;border-radius:30px;padding:3px;flex:0 0 auto}.toggle:before{content:"";display:block;width:16px;height:16px;border-radius:50%;background:#8796aa;transition:.2s}.toggle.on{background:linear-gradient(90deg,#168dc8,#43dcff);border-color:#4bdfff;box-shadow:0 0 14px #43dcff2b}.toggle.on:before{transform:translateX(18px);background:white}.mode-list{display:grid;gap:8px}.mode,.device,.profile-card{border:1px solid #29394f;background:#111c2a;color:#9daec3;border-radius:10px;padding:11px;font-size:10px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px}.mode.selected,.device.selected,.profile-card.selected{border-color:#348cb2;color:#6ce3ff;background:#10283a}.mode small{font-size:8px;color:#61758e}.devices{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px}.device{justify-content:center;padding:10px 4px}.range{margin-top:17px}.range-head{display:flex;justify-content:space-between;font-size:10px;margin-bottom:9px;color:#adbed2;gap:8px}.range-head b{color:var(--cyan)}input[type=range]{width:100%;accent-color:var(--cyan)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}.control-row{margin:14px 0}.control-row label{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#b7c7da;margin-bottom:8px}.control-row output{color:var(--cyan);font-weight:900}.help{font-size:9px;color:var(--muted);line-height:1.6}.cross-wrap{display:grid;place-items:center;min-height:260px;border:1px solid #26384d;border-radius:14px;background:radial-gradient(circle,#172b40,#080e18 70%);overflow:hidden}.cross-stage{width:220px;height:220px;position:relative;display:grid;place-items:center;background:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:22px 22px}.crosshair{position:relative;width:var(--size,30px);height:var(--size,30px);--ch:var(--cyan)}.crosshair .line{position:absolute;background:var(--ch);border-radius:3px;box-shadow:0 0 8px color-mix(in srgb,var(--ch),transparent 25%)}.crosshair .top{width:var(--thick,2px);height:var(--arm,9px);left:50%;top:0;transform:translateX(-50%)}.crosshair .bottom{width:var(--thick,2px);height:var(--arm,9px);left:50%;bottom:0;transform:translateX(-50%)}.crosshair .left{height:var(--thick,2px);width:var(--arm,9px);top:50%;left:0;transform:translateY(-50%)}.crosshair .right{height:var(--thick,2px);width:var(--arm,9px);top:50%;right:0;transform:translateY(-50%)}.crosshair .dot{position:absolute;width:var(--dot,4px);height:var(--dot,4px);border-radius:50%;background:var(--ch);left:50%;top:50%;transform:translate(-50%,-50%)}.crosshair.circle{border:var(--thick,2px) solid var(--ch);border-radius:50%;width:var(--size,30px);height:var(--size,30px)}.crosshair.circle .line{display:none}.crosshair.circle .dot{display:none}.profile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.profile-card{display:block;text-align:left;min-height:70px}.profile-card b{display:block;margin-bottom:6px}.profile-card small{font-size:8px;color:#71849e}.history-row{padding:11px 0;border-bottom:1px solid #1d2a3a;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#b2c0d3}.history-row em{font-style:normal;color:var(--green);white-space:nowrap}.empty{text-align:center;padding:35px 12px;color:var(--muted);font-size:11px}.empty b{display:block;color:#e8f2ff;margin-bottom:6px;font-size:15px}.actions{display:flex;gap:8px;flex-wrap:wrap}.footer{display:flex;justify-content:space-between;margin-top:22px;color:#5c7089;font-size:8px;letter-spacing:1px;gap:10px}.toast{position:fixed;z-index:40;bottom:22px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#17283a;border:1px solid #34536c;border-radius:30px;padding:11px 16px;color:#eaf7ff;font-size:11px;transition:.2s;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.notice{border:1px solid #31506a;background:#102236;color:#a9c8df;padding:11px 13px;border-radius:11px;font-size:9px;line-height:1.6;margin-bottom:13px}
+body.light{--bg:#edf3fa;--panel:#fff;--panel2:#f3f7fc;--line:#d1deeb;--text:#152337;--muted:#65778d;background:var(--bg);color:var(--text)}body.light .side,body.light .metric,body.light .panel{background:#ffffffed}body.light .nav button{color:#60738a}body.light .nav button.active{background:#e5f6ff;color:#087aa0}body.light .hero{background:linear-gradient(105deg,#d9efff,#e8edff 60%,#f9e8f0)}body.light .hero p{color:#536a82}body.light .secondary,body.light .soft,body.light .mode,body.light .device{background:#f2f6fb;color:#344b63;border-color:#ccd9e7}body.light .field input,body.light .text-input{background:#fff;color:#152337}
+@media(max-width:1000px){.layout{grid-template-columns:205px 1fr}.grid{grid-template-columns:1fr}main{padding:22px}.metrics{grid-template-columns:repeat(2,1fr)}.profile-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.layout{display:block;padding-bottom:67px}.side{position:fixed;z-index:20;bottom:0;left:0;right:0;height:62px;padding:5px 6px;display:block;border:0;border-top:1px solid #24364a;background:#09111eef;backdrop-filter:blur(16px)}.brand,.nav-label,.side-foot{display:none}.nav{height:100%;grid-template-columns:repeat(5,1fr);gap:3px}.nav button{height:51px;padding:4px 1px;display:flex;flex-direction:column;justify-content:center;gap:3px;font-size:8px;text-align:center}.nav button span{font-size:16px}.nav button.active{box-shadow:inset 0 2px var(--cyan)}main{padding:17px 12px 24px}.top{margin-bottom:17px}.hero{padding:20px 17px}.hero:after{font-size:110px;right:-8%}.hero p{max-width:85%;font-size:10px}.metric{padding:12px}.metric strong{font-size:21px}.metric-head{font-size:9px}.panel{padding:15px}.online{font-size:8px}.crumb{font-size:9px}.two-col{grid-template-columns:1fr}.profile-grid{grid-template-columns:1fr 1fr}.footer{font-size:7px}}
+
+/* V8 ULTRA visual layer */
+:root{--cyan:#55e7ff;--blue:#718cff;--pink:#ff5ca8;--green:#4be5b7;--line:#263c56}
+body{background:radial-gradient(ellipse at 18% 0%,#11243a 0,transparent 35%),radial-gradient(ellipse at 90% 80%,#21142e 0,transparent 32%),#070a12}
+body:before,body:after{opacity:.28;filter:blur(105px);animation:float 17s ease-in-out infinite alternate}
+.side{background:linear-gradient(180deg,#0a1220ed,#080d17f2);box-shadow:12px 0 45px #0002}
+.brand-icon{box-shadow:0 0 25px #5bdfff55,0 10px 35px #8c4dff44;animation:brandGlow 4s ease-in-out infinite}
+@keyframes brandGlow{50%{filter:saturate(1.35);box-shadow:0 0 32px #5bdfff77,0 10px 35px #8c4dff44}}
+.hero{background:linear-gradient(110deg,#102d48,#111b31 57%,#29172f);box-shadow:inset 0 1px #ffffff12,0 18px 50px #0003}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,#ffffff08 48%,transparent 65%);transform:translateX(-100%);animation:shine 8s ease-in-out infinite}
+@keyframes shine{0%,55%{transform:translateX(-100%)}80%,100%{transform:translateX(100%)}}
+.metric,.panel,.login-card{box-shadow:0 14px 45px #0003,inset 0 1px #ffffff08;backdrop-filter:blur(12px);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.metric:hover,.panel:hover{transform:translateY(-2px);border-color:#3b6684;box-shadow:0 18px 48px #0005,0 0 22px #43dcff0d}
+button{transition:transform .16s ease,filter .16s ease,background .16s ease,border-color .16s ease}
+button:hover{filter:brightness(1.13)}
+button:active{transform:scale(.97)}
+.nav button{transition:all .2s ease}
+.nav button.active{box-shadow:inset 3px 0 var(--cyan),0 0 22px #43dcff12}
+.page.active{animation:pageEnter .32s cubic-bezier(.2,.8,.2,1)}
+@keyframes pageEnter{from{opacity:0;transform:translateY(9px) scale(.995)}to{opacity:1;transform:none}}
+.primary{box-shadow:0 7px 22px #43dcff20}
+.toggle{transition:background .2s ease,box-shadow .2s ease}
+.cross-wrap{box-shadow:inset 0 0 45px #43dcff08}
+.small-btn#sound-btn{font-size:17px;color:var(--cyan)}
+.small-btn#sound-btn.muted{color:#718096;opacity:.65}
+.toast{backdrop-filter:blur(12px);box-shadow:0 12px 35px #0007}
+.login-card{border-color:#3b5878;box-shadow:0 25px 100px #000b,0 0 45px #43dcff0d}
+::selection{background:#43dcff55;color:white}
+@media(max-width:900px){.layout{grid-template-columns:76px 1fr}.side{padding:20px 10px}.brand{justify-content:center;padding:0}.brand strong,.nav-label,.nav button:not(.active) span~*,.side-foot>div{display:none}.nav button{justify-content:center;font-size:0;padding:13px}.nav button span{font-size:17px}.side-foot{justify-content:center;padding:8px}.metrics{grid-template-columns:repeat(2,1fr)}main{padding:20px}}
+@media(max-width:620px){.layout{display:block}.side{position:sticky;top:0;z-index:10;height:auto;padding:9px;border-right:0;border-bottom:1px solid var(--line)}.brand{display:none}.side>.nav-label,.side-foot{display:none}.nav{display:flex;overflow-x:auto;gap:5px}.nav button{flex:0 0 auto;font-size:9px;padding:9px 10px}.nav button span{font-size:14px;width:auto}.grid,.two-col{grid-template-columns:1fr}.top{align-items:flex-start}.online{display:none}main{padding:16px 12px}.hero{padding:22px}.metrics{gap:8px}.metric{padding:12px}.metric strong{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+</style>
+</head>
+<body>
+<div class="login-wrap" id="login">
+ <div class="login-card">
+  <div class="login-logo">◎</div><div class="eyebrow">ELITE CONTROL · V8.0</div>
+  <h1>Key Activation</h1><p>Nhập License Key để xác thực trực tiếp với máy chủ bản quyền DRAG AIM PRO X V8.0.</p>
+  <form id="login-form"><div class="field"><label>ACCESS ACTIVATION KEY</label><input id="passcode" type="password" placeholder="Nhập key kích hoạt" autocomplete="off" required></div><button class="login-btn">KÍCH HOẠT &amp; VÀO APP&nbsp; →</button></form>
+  <div class="login-note">Kết nối máy chủ bản quyền · Key được xác thực trực tuyến</div>
+ </div>
+</div>
+<div class="layout">
+<aside class="side">
+ <div class="brand"><div class="brand-icon">◎</div><div><strong>DRAG AIM PRO X</strong><small>ELITE CONTROL · V8.0</small></div></div>
+ <div><div class="nav-label">MAIN MENU</div><nav class="nav">
+  <button class="active" data-page="dashboard"><span>▦</span>Dashboard</button><button data-page="control"><span>☼</span>Điều khiển</button><button data-page="crosshair"><span>⌖</span>Crosshair</button><button data-page="sensitivity"><span>◉</span>Độ nhạy</button><button data-page="profiles"><span>▤</span>Preset</button><button data-page="advanced"><span>⚙</span>Nâng cao</button><button data-page="history"><span>◷</span>Lịch sử</button><button data-page="account"><span>♙</span>Tài khoản</button>
+ </nav></div>
+ <div class="side-foot"><div class="avatar">DX</div><div><b id="profile-name">Guest User</b><small>Local demo account</small></div></div>
+</aside>
+<main>
+ <div class="top"><div class="crumb">Control center&nbsp; / &nbsp;<b id="crumb">Dashboard</b></div><div class="top-actions"><span class="online">● SYSTEM ONLINE</span><button class="small-btn" onclick="toggleSound()" id="sound-btn" title="Bật/tắt âm thanh">♫</button><button class="small-btn" onclick="toggleTheme()" title="Đổi giao diện">◐</button><button class="small-btn" onclick="toast('Drag Aim Pro X · Premium V8.0')" title="Thông tin">ⓘ</button><button class="small-btn" onclick="logout()" title="Đăng xuất">↗</button></div></div>
+ <section class="page active" id="dashboard">
+  <div class="hero"><div class="eyebrow">✦ NEXT GENERATION GAMING UI</div><h1>Control your <span style="color:var(--cyan)">experience.</span></h1><p>Dashboard V8.0 với Crosshair Studio, Sensitivity Studio, quản lý preset, backup/restore và nhật ký hoạt động. Tất cả là công cụ tùy chỉnh tham khảo độc lập, không đọc hoặc thay đổi dữ liệu trong game.</p><div class="hero-actions"><button class="primary" onclick="go('profiles')">Quản lý preset →</button><button class="secondary" onclick="exportBackup()">↓ Backup cấu hình</button><button class="secondary" onclick="resetAll()">↻ Reset demo</button></div></div>
+  <div class="metrics"><div class="metric"><div class="metric-head">Tùy chọn đang bật <span class="metric-icon">◉</span></div><strong id="m-enabled">0</strong><small>Trạng thái hiện tại</small></div><div class="metric"><div class="metric-head">Game profile <span class="metric-icon">⌘</span></div><strong id="m-mode" style="font-size:16px;margin-top:14px">Battle Royale</strong><small>Chế độ giao diện</small></div><div class="metric"><div class="metric-head">Thiết bị <span class="metric-icon">▣</span></div><strong id="m-device" style="font-size:18px;margin-top:14px">Mobile</strong><small>Layout đang chọn</small></div><div class="metric"><div class="metric-head">Preset đã lưu <span class="metric-icon">▤</span></div><strong id="m-profiles">0</strong><small>Cấu hình cá nhân</small></div></div>
+  <div class="grid"><div class="panel"><div class="panel-head"><div><div class="panel-title">QUICK SETTINGS</div><div class="panel-sub">Thiết lập giao diện nhanh</div></div><span class="tag">FAST ACCESS</span></div><div id="quick-settings"></div></div><div class="panel"><div class="panel-head"><div><div class="panel-title">GAME PROFILE</div><div class="panel-sub">Profile tham khảo theo chế độ</div></div><span class="tag">PROFILE</span></div><div id="mode-list" class="mode-list"></div><div class="devices" id="device-list"><button class="device">▣ Mobile</button><button class="device">▰ Tablet</button><button class="device">▱ Emulator</button></div></div></div>
+ </section>
+ <section class="page" id="control"><div class="panel"><div class="panel-head"><div><div class="panel-title">ĐIỀU KHIỂN GIAO DIỆN</div><div class="panel-sub">Tùy chỉnh trải nghiệm tương tác trong dashboard</div></div><span class="tag">CONTROL</span></div><div id="control-settings"></div></div></section>
+ <section class="page" id="crosshair">
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">CROSSHAIR STUDIO</div><div class="panel-sub">Xem trước và tùy chỉnh tâm ngắm minh họa</div></div><span class="tag">VISUAL EDITOR</span></div>
+   <div class="two-col"><div><div class="cross-wrap"><div class="cross-stage"><div class="crosshair" id="crosshair-preview"><i class="line top"></i><i class="line bottom"></i><i class="line left"></i><i class="line right"></i><i class="dot"></i></div></div></div><p class="help">Bản xem trước chỉ hiển thị trong trang này; không chèn vào màn hình game.</p></div>
+   <div><div class="field"><label>KIỂU TÂM NGẮM</label><select id="cross-style" class="text-input"><option value="plus">Dấu cộng</option><option value="circle">Vòng tròn</option></select></div>
+    <div class="control-row"><label>Kích thước <output id="cross-size-val">34 px</output></label><input id="cross-size" type="range" min="12" max="90" value="34"></div>
+    <div class="control-row"><label>Độ dài nét <output id="cross-arm-val">10 px</output></label><input id="cross-arm" type="range" min="3" max="30" value="10"></div>
+    <div class="control-row"><label>Độ dày <output id="cross-thick-val">2 px</output></label><input id="cross-thick" type="range" min="1" max="8" value="2"></div>
+    <div class="control-row"><label>Tâm chấm <output id="cross-dot-val">4 px</output></label><input id="cross-dot" type="range" min="0" max="12" value="4"></div>
+    <div class="field"><label>MÀU TÂM NGẮM</label><input id="cross-color" type="color" value="#43dcff" class="text-input" style="height:42px;padding:5px"></div>
+    <div class="actions"><button class="primary" onclick="saveCrosshair()">Lưu kiểu tâm ngắm</button><button class="secondary" onclick="resetCrosshair()">Mặc định</button></div>
+   </div></div>
+  </div>
+ </section>
+ <section class="page" id="sensitivity">
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">SENSITIVITY STUDIO</div><div class="panel-sub">Thanh điều chỉnh và ghi nhớ thông số tham khảo của riêng bạn</div></div><span class="tag">MANUAL TUNING</span></div>
+   <div class="notice">Các con số dưới đây chỉ là ghi chú cá nhân để bạn tự thử nghiệm. Không tự động áp dụng vào Free Fire hoặc thay đổi DPI/hệ thống của thiết bị.</div>
+   <div class="two-col" id="sens-controls"></div>
+   <div class="field"><label>GHI CHÚ THIẾT BỊ / CẢM NHẬN</label><input id="sens-note" class="text-input" maxlength="160" placeholder="Ví dụ: thử nghiệm trên màn hình 90Hz..."></div>
+   <div class="actions"><button class="primary" onclick="saveSensitivity()">Lưu thông số</button><button class="secondary" onclick="resetSensitivity()">Đặt lại</button></div>
+  </div>
+ </section>
+ <section class="page" id="profiles">
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">PRESET MANAGER</div><div class="panel-sub">Tạo, áp dụng, đổi tên và xóa cấu hình đã lưu</div></div><span class="tag">LOCAL PROFILES</span></div>
+   <div class="two-col"><div class="field"><label>TÊN PRESET MỚI</label><input id="profile-input" class="text-input" maxlength="30" placeholder="Ví dụ: M1887 - thử nghiệm"></div><div class="field" style="align-content:end"><button class="primary" onclick="saveProfile()">＋ Lưu preset hiện tại</button></div></div>
+   <div id="profile-list" class="profile-grid"></div>
+  </div>
+ </section>
+ <section class="page" id="advanced">
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">TÙY CHỈNH NÂNG CAO</div><div class="panel-sub">Các công tắc mô phỏng giao diện</div></div><span class="tag" id="advanced-count">0 ACTIVE</span></div><div id="advanced-settings"></div></div>
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">BACKUP & RESTORE</div><div class="panel-sub">Sao lưu cấu hình cục bộ dưới dạng JSON</div></div><span class="tag">DATA TOOLS</span></div><div class="actions"><button class="primary" onclick="exportBackup()">↓ Xuất backup JSON</button><button class="secondary" onclick="$('restore-file').click()">↑ Nhập backup JSON</button><input id="restore-file" type="file" accept=".json,application/json" hidden onchange="importBackup(event)"></div><p class="help">Backup chứa các tùy chọn, preset và thông số cá nhân. Hãy giữ file ở nơi an toàn. Dữ liệu chỉ được xử lý trong trình duyệt.</p></div>
+ </section>
+ <section class="page" id="history">
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">ACTIVITY LOG</div><div class="panel-sub">Lịch sử thay đổi lưu trên thiết bị</div></div><div class="actions"><button class="secondary" onclick="exportLogs()">Xuất log</button><button class="danger" onclick="clearLogs()">Xóa lịch sử</button></div></div><div id="history-list"></div></div>
+ </section>
+ <section class="page" id="account">
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">TÀI KHOẢN DEMO</div><div class="panel-sub">Quản lý tên hiển thị và phiên đăng nhập cục bộ</div></div><span class="tag">LOCAL ONLY</span></div>
+   <div class="notice">Đây không phải hệ thống tài khoản bảo mật: không có máy chủ, không xác minh mật khẩu và không đồng bộ giữa các thiết bị. Không dùng mật khẩu thật.</div>
+   <div class="field"><label>TÊN HIỂN THỊ</label><input id="account-name" class="text-input" maxlength="32"></div><div class="actions"><button class="primary" onclick="updateAccount()">Lưu tên hiển thị</button><button class="secondary" onclick="logout()">Đăng xuất</button></div>
+  </div>
+  <div class="panel"><div class="panel-head"><div><div class="panel-title">DỮ LIỆU TRÌNH DUYỆT</div><div class="panel-sub">Xóa dữ liệu demo khỏi trình duyệt hiện tại</div></div></div><button class="danger" onclick="clearLocalData()">Xóa toàn bộ dữ liệu cục bộ</button></div>
+ </section>
+ <div class="footer"><span>DRAG AIM PRO X · ELITE CONTROL PANEL</span><span>BUILD 7.0.0 · LOCAL DEMO</span></div>
+</main></div><div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const defs={
+ quick:[['⚡','Chế độ siêu nhạy','Hiệu ứng phản hồi giao diện'],['▤','Lưu log tự động','Lưu thay đổi trong trình duyệt'],['◔','Chế độ ban đêm','Giao diện tối dịu mắt']],
+ control:[['☼','Hiệu ứng giao diện','Bật hiệu ứng chuyển động nhẹ'],['⌁','Phản hồi thao tác','Mô phỏng phản hồi tương tác'],['▣','Hiển thị trạng thái','Hiện trạng thái tùy chọn']],
+ advanced:[['⚡','Chế độ siêu nhạy','Tùy chọn mô phỏng giao diện'],['◷','Khóa mục tiêu thông minh','Minh họa giao diện, không tác động game'],['☆','Ưu tiên Headshot','Minh họa giao diện, không tác động game'],['♧','Giảm rung khi bắn','Thiết lập hiển thị demo'],['♢','Thông báo mục tiêu','Hiển thị thông báo minh họa'],['▤','Lưu log tự động','Ghi lại thay đổi trên trang'],['◔','Chế độ ban đêm','Giao diện tối dịu mắt']]
+};
+const defaults={quick:[false,true,true],control:[true,false,true],advanced:[false,false,false,false,false,true,false]};
+const sensDefs=[['Tổng quan',0,200],['Red Dot',0,200],['Ống ngắm 2x',0,200],['Ống ngắm 4x',0,200],['Ống ngắm súng ngắm',0,200],['Nhìn xung quanh',0,200]];
+let state=read('dax7state',defaults),logs=read('dax7logs',[]),mode=localStorage.getItem('dax7mode')||'Battle Royale',device=localStorage.getItem('dax7device')||'Mobile';
+let profiles=read('dax7profiles',[]),sensitivity=read('dax7sens',[95,90,85,80,50,90]),cross=read('dax7cross',{style:'plus',size:34,arm:10,thick:2,dot:4,color:'#43dcff'});
+function read(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v??JSON.parse(JSON.stringify(f))}catch{return JSON.parse(JSON.stringify(f))}}
+function persist(){localStorage.setItem('dax7state',JSON.stringify(state));localStorage.setItem('dax7logs',JSON.stringify(logs.slice(0,100)));localStorage.setItem('dax7mode',mode);localStorage.setItem('dax7device',device);localStorage.setItem('dax7profiles',JSON.stringify(profiles));localStorage.setItem('dax7sens',JSON.stringify(sensitivity));localStorage.setItem('dax7cross',JSON.stringify(cross));stats()}
+function toast(s){let t=$('toast');t.textContent=s;t.classList.add('show');clearTimeout(window.tmr);window.tmr=setTimeout(()=>t.classList.remove('show'),2300)}
+function log(s){if(state.quick?.[1]!==false && state.advanced?.[5]!==false){logs.unshift(new Date().toLocaleString('vi-VN')+' · '+s);logs=logs.slice(0,100);localStorage.setItem('dax7logs',JSON.stringify(logs));renderLogs()}persist()}
+function renderSettings(key,target){let host=$(target);host.innerHTML='';defs[key].forEach((d,i)=>{let row=document.createElement('div');row.className='setting';row.innerHTML=`<div class="setting-info"><span class="setting-ico">${d[0]}</span><div><b>${d[1]}</b><small>${d[2]}</small></div></div><button class="toggle ${state[key][i]?'on':''}" role="switch" aria-checked="${state[key][i]}" aria-label="${d[1]}"></button>`;row.querySelector('button').onclick=()=>{state[key][i]=!state[key][i];persist();renderSettings(key,target);log((state[key][i]?'Bật ':'Tắt ')+d[1])};host.appendChild(row)})}
+function stats(){let n=Object.values(state).flat().filter(Boolean).length;$('m-enabled').textContent=n;$('m-mode').textContent=mode;$('m-device').textContent=device;$('m-profiles').textContent=profiles.length;$('advanced-count').textContent=state.advanced.filter(Boolean).length+' ACTIVE'}
+function renderModes(){let ms=['Battle Royale','Clash Squad','TDM','Lone Wolf'];$('mode-list').innerHTML=ms.map(x=>`<button class="mode ${x===mode?'selected':''}" data-mode="${x}">${x}<small>${x===mode?'ACTIVE':'SELECT'}</small></button>`).join('');document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;persist();renderModes();log('Chọn profile '+mode)})}
+function renderDevices(){document.querySelectorAll('#device-list button').forEach(b=>{let n=b.textContent.replace(/[▣▰▱]/g,'').trim();b.classList.toggle('selected',n===device);b.onclick=()=>{device=n;persist();renderDevices();log('Chọn thiết bị '+device)}})}
+function renderLogs(){$('history-list').innerHTML=logs.length?logs.slice(0,50).map(x=>`<div class="history-row"><span>${escapeHTML(x)}</span><em>● SAVED</em></div>`).join(''):'<div class="empty"><b>Chưa có hoạt động</b>Các thay đổi của bạn sẽ xuất hiện tại đây.</div>'}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=({dashboard:'Dashboard',control:'Điều khiển',crosshair:'Crosshair Studio',sensitivity:'Sensitivity Studio',profiles:'Preset Manager',advanced:'Nâng cao',history:'Lịch sử',account:'Tài khoản'})[id]||id;if(id==='account')$('account-name').value=localStorage.getItem('dax7user')||'Guest User'}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
+function renderSens(){let host=$('sens-controls');host.innerHTML='';sensDefs.forEach((d,i)=>{let wrap=document.createElement('div');wrap.className='control-row';wrap.innerHTML=`<label>${d[0]} <output id="sv${i}">${sensitivity[i]}</output></label><input type="range" min="${d[1]}" max="${d[2]}" value="${sensitivity[i]}" id="sr${i}">`;host.appendChild(wrap);wrap.querySelector('input').oninput=e=>{sensitivity[i]=+e.target.value;$('sv'+i).textContent=e.target.value}});$('sens-note').value=localStorage.getItem('dax7sensnote')||''}
+function saveSensitivity(){localStorage.setItem('dax7sensnote',$('sens-note').value);persist();log('Lưu thông số độ nhạy tham khảo');toast('Đã lưu thông số')}
+function resetSensitivity(){sensitivity=[95,90,85,80,50,90];renderSens();saveSensitivity()}
+function updateCrossPreview(){let el=$('crosshair-preview');el.className='crosshair '+(cross.style==='circle'?'circle':'');el.style.setProperty('--size',cross.size+'px');el.style.setProperty('--arm',cross.arm+'px');el.style.setProperty('--thick',cross.thick+'px');el.style.setProperty('--dot',cross.dot+'px');el.style.setProperty('--ch',cross.color);['style','size','arm','thick','dot','color'].forEach(k=>{let input=$('cross-'+k);if(input)input.value=cross[k];let out=$(k==='size'?'cross-size-val':k==='arm'?'cross-arm-val':k==='thick'?'cross-thick-val':k==='dot'?'cross-dot-val':null);if(out)out.textContent=cross[k]+' px'})}
+['style','size','arm','thick','dot','color'].forEach(k=>$('cross-'+k).addEventListener('input',e=>{cross[k]=k==='style'||k==='color'?e.target.value:+e.target.value;updateCrossPreview()}));
+function saveCrosshair(){persist();log('Lưu thiết kế Crosshair');toast('Đã lưu kiểu tâm ngắm')}
+function resetCrosshair(){cross={style:'plus',size:34,arm:10,thick:2,dot:4,color:'#43dcff'};updateCrossPreview();saveCrosshair()}
+function snapshot(){return {state:JSON.parse(JSON.stringify(state)),mode,device,sensitivity:[...sensitivity],cross:{...cross}}}
+function saveProfile(){let name=$('profile-input').value.trim();if(!name){toast('Nhập tên preset trước');return}profiles.unshift({id:Date.now(),name,created:new Date().toLocaleString('vi-VN'),data:snapshot()});profiles=profiles.slice(0,40);$('profile-input').value='';persist();renderProfiles();log('Tạo preset '+name);toast('Đã lưu preset')}
+function applyProfile(id){let p=profiles.find(x=>x.id===id);if(!p)return;if(!confirm('Áp dụng preset "'+p.name+'"? Cấu hình hiện tại sẽ được thay thế.'))return;state=p.data.state;mode=p.data.mode;device=p.data.device;sensitivity=p.data.sensitivity;cross=p.data.cross;persist();renderAll();renderSens();updateCrossPreview();log('Áp dụng preset '+p.name);toast('Đã áp dụng preset')}
+function renameProfile(id){let p=profiles.find(x=>x.id===id);if(!p)return;let n=prompt('Tên mới:',p.name);if(n&&n.trim()){p.name=n.trim().slice(0,30);persist();renderProfiles();log('Đổi tên preset')}}
+function deleteProfile(id){let p=profiles.find(x=>x.id===id);if(!p||!confirm('Xóa preset "'+p.name+'"?'))return;profiles=profiles.filter(x=>x.id!==id);persist();renderProfiles();log('Xóa preset '+p.name)}
+function renderProfiles(){$('profile-list').innerHTML=profiles.length?profiles.map(p=>`<div class="profile-card"><b>${escapeHTML(p.name)}</b><small>${escapeHTML(p.created||'Preset cá nhân')}</small><div class="actions" style="margin-top:10px"><button class="primary" onclick="applyProfile(${p.id})">Dùng</button><button class="soft" onclick="renameProfile(${p.id})">Đổi tên</button><button class="danger" onclick="deleteProfile(${p.id})">Xóa</button></div></div>`).join(''):'<div class="empty" style="grid-column:1/-1"><b>Chưa có preset</b>Lưu cấu hình hiện tại để sử dụng lại sau.</div>'}
+function renderAll(){renderSettings('quick','quick-settings');renderSettings('control','control-settings');renderSettings('advanced','advanced-settings');renderModes();renderDevices();renderLogs();renderProfiles();stats()}
+function download(name,data,type='application/json'){let blob=new Blob([data],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function exportBackup(){let data={app:'DRAG AIM PRO X',version:'8.0',exportedAt:new Date().toISOString(),...snapshot(),profiles,logs};download('drag-aim-pro-x-v7-backup.json',JSON.stringify(data,null,2));toast('Đã xuất file backup')}
+function importBackup(e){let file=e.target.files?.[0];if(!file)return;let reader=new FileReader();reader.onload=()=>{try{let d=JSON.parse(reader.result);if(!d.state||!d.sensitivity||!d.cross||!Array.isArray(d.profiles))throw Error('invalid');if(!confirm('Nhập backup sẽ thay thế dữ liệu hiện tại. Tiếp tục?'))return;state=d.state;mode=d.mode||'Battle Royale';device=d.device||'Mobile';sensitivity=d.sensitivity;cross=d.cross;profiles=d.profiles;logs=Array.isArray(d.logs)?d.logs:[];persist();renderAll();renderSens();updateCrossPreview();toast('Khôi phục backup thành công')}catch{toast('File backup không hợp lệ hoặc không tương thích')}finally{e.target.value=''}};reader.readAsText(file)}
+function exportLogs(){download('drag-aim-pro-x-activity-log.txt',logs.join('\n'),'text/plain;charset=utf-8');toast('Đã xuất lịch sử')}
+function clearLogs(){if(!confirm('Xóa toàn bộ lịch sử hoạt động?'))return;logs=[];persist();renderLogs();toast('Đã xóa lịch sử')}
+function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('dax7theme',document.body.classList.contains('light')?'light':'dark');toast('Đã đổi giao diện')}
+function updateAccount(){let n=$('account-name').value.trim().slice(0,32)||'Guest User';localStorage.setItem('dax7user',n);$('profile-name').textContent=n;log('Cập nhật tên hiển thị');toast('Đã cập nhật tên')}
+const LICENSE_API='/.netlify/functions/license';
+function getDeviceId(){let id=localStorage.getItem('dax_device_id');if(!id){id=(crypto.randomUUID?crypto.randomUUID():('dax-'+Date.now()+'-'+Math.random().toString(36).slice(2)));localStorage.setItem('dax_device_id',id)}return id}
+async function licenseRequest(payload){const response=await fetch(LICENSE_API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload),cache:'no-store'});let data={};try{data=await response.json()}catch{}if(!response.ok||!data.ok)throw new Error(data.message||'Không thể xác thực License Key.');return data}
+function showApp(){localStorage.setItem('dax7session','yes');$('profile-name').textContent=localStorage.getItem('dax7user')||'Licensed User';$('login').classList.add('hidden')}
+function lockApp(message){localStorage.removeItem('dax7session');$('login').classList.remove('hidden');if(message)toast(message)}
+$('login-form').onsubmit=async e=>{e.preventDefault();const key=$('passcode').value.trim();if(!key)return;const button=$('login-form').querySelector('button');button.disabled=true;button.textContent='ĐANG XÁC THỰC...';try{const result=await licenseRequest({action:'activate',key,deviceId:getDeviceId(),deviceLabel:navigator.userAgent.slice(0,75)});localStorage.setItem('dax_license_key',key);localStorage.setItem('dax7user','Licensed User');showApp();$('passcode').value='';playSound('login');toast(result.expiresAt?'Kích hoạt thành công':'Kích hoạt bản quyền vĩnh viễn')}catch(err){playSound('error');toast(err.message);$('passcode').focus()}finally{button.disabled=false;button.textContent='KÍCH HOẠT & VÀO APP  →'}};
+async function validateSavedLicense(){const key=localStorage.getItem('dax_license_key');if(!key||localStorage.getItem('dax7session')!=='yes'){lockApp();return}try{await licenseRequest({action:'verify',key,deviceId:getDeviceId(),deviceLabel:navigator.userAgent.slice(0,75)});showApp()}catch(err){lockApp(err.message||'Bản quyền không còn hiệu lực')}}
+function logout(){localStorage.removeItem('dax7session');$('login').classList.remove('hidden');$('passcode').value=''}
+function clearLocalData(){if(!confirm('Xóa toàn bộ dữ liệu V8.0 trên trình duyệt này? Thao tác không thể hoàn tác.'))return;['dax7state','dax7logs','dax7mode','dax7device','dax7profiles','dax7sens','dax7cross','dax7sensnote','dax7user','dax7session','dax7theme','dax_license_key','dax_device_id'].forEach(k=>localStorage.removeItem(k));location.reload()}
+function resetAll(){if(!confirm('Đặt lại toàn bộ cài đặt demo?'))return;state=JSON.parse(JSON.stringify(defaults));mode='Battle Royale';device='Mobile';sensitivity=[95,90,85,80,50,90];cross={style:'plus',size:34,arm:10,thick:2,dot:4,color:'#43dcff'};logs=[];persist();renderAll();renderSens();updateCrossPreview();toast('Đã đặt lại cài đặt')}
+$('profile-name').textContent=localStorage.getItem('dax7user')||'Guest User';
+if(localStorage.getItem('dax7theme')==='light')document.body.classList.add('light');
+renderAll();renderSens();updateCrossPreview();validateSavedLicense();
+setInterval(()=>{if(localStorage.getItem('dax7session')==='yes')validateSavedLicense()},5*60*1000);
+
+/* V8 ULTRA sound engine: generated tones, no external audio files required */
+let soundEnabled = localStorage.getItem('dax8sound') !== 'off';
+let soundVolume = Math.max(0, Math.min(1, Number(localStorage.getItem('dax8volume') ?? 0.22)));
+let audioCtx = null;
+function getAudio(){
+  if(!soundEnabled) return null;
+  try{
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if(!Ctx) return null;
+    if(!audioCtx) audioCtx = new Ctx();
+    if(audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }catch(_){ return null; }
+}
+function tone(freq=620,duration=.055,type='sine',volume=1,delay=0){
+  const ctx=getAudio(); if(!ctx || soundVolume<=0) return;
+  const osc=ctx.createOscillator(), gain=ctx.createGain();
+  osc.type=type; osc.frequency.setValueAtTime(freq,ctx.currentTime+delay);
+  gain.gain.setValueAtTime(.0001,ctx.currentTime+delay);
+  gain.gain.exponentialRampToValueAtTime(Math.max(.0001,soundVolume*.12*volume),ctx.currentTime+delay+.008);
+  gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+delay+duration);
+  osc.connect(gain);gain.connect(ctx.destination);
+  osc.start(ctx.currentTime+delay);osc.stop(ctx.currentTime+delay+duration+.015);
+}
+function playSound(kind='click'){
+  if(!soundEnabled) return;
+  if(kind==='success'){tone(520,.08,'sine',.9);tone(780,.12,'sine',.8,.075)}
+  else if(kind==='error'){tone(190,.12,'triangle',.8);tone(145,.13,'triangle',.7,.1)}
+  else if(kind==='nav'){tone(480,.045,'sine',.55);tone(690,.06,'sine',.45,.035)}
+  else if(kind==='toggle'){tone(560,.045,'triangle',.55);tone(760,.045,'sine',.45,.035)}
+  else if(kind==='login'){tone(440,.08,'sine',.7);tone(660,.08,'sine',.7,.08);tone(880,.13,'sine',.8,.16)}
+  else tone(620,.045,'sine',.45);
+}
+function toggleSound(){
+  soundEnabled=!soundEnabled;
+  localStorage.setItem('dax8sound',soundEnabled?'on':'off');
+  updateSoundButton();
+  if(soundEnabled) playSound('success');
+  toast(soundEnabled?'Đã bật hiệu ứng âm thanh':'Đã tắt hiệu ứng âm thanh');
+}
+function updateSoundButton(){
+  const b=document.getElementById('sound-btn');
+  if(b){b.textContent=soundEnabled?'♫':'♩';b.classList.toggle('muted',!soundEnabled);b.title=soundEnabled?'Tắt âm thanh':'Bật âm thanh'}
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');
+  if(!b || b.id==='sound-btn') return;
+  if(b.matches('.nav button,[data-page]')) playSound('nav');
+  else if(b.matches('.toggle')) playSound('toggle');
+  else if(b.matches('.login-btn,.primary')) playSound('success');
+  else playSound('click');
+},true);
+updateSoundButton();
+
+</script>
+</body></html>
